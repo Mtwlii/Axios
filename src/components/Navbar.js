@@ -6,7 +6,7 @@ const Navbar = (props) => {
     //     props.history.push('/about')
     // }, 3000);
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-danger ">
+        <nav className="navbar navbar-expand-lg navbar-dark ">
             <div className="container-fluid">
                 <NavLink className="navbar-brand" to="/no">Navbar</NavLink>
                 <div className="collapse navbar-collapse" id="navbar">
