@@ -6,13 +6,15 @@ class Post extends Component {
         post: null
     }
     componentDidMount() {
-        console.log(this.props)
+
         let id = this.props.match.params.post_id;
-        axios.get('https://jsonplaceholder.typicode.com/posts' + id)
+
+        axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
             .then((res) => {
                 this.setState({
                     post: res.data
                 })
+                console.log(res)
             });
     }
     render() {
@@ -20,9 +22,7 @@ class Post extends Component {
         const post = this.state.post ? (
 
             <div className="post">
-                <h3 className="text center">
-                    {this.state.post.title}
-                </h3>
+                <h4 className="text-center">{this.state.post.title}</h4>
                 <p>{this.state.post.body}</p>
             </div>
         ) : (
@@ -32,7 +32,7 @@ class Post extends Component {
             )
         return (
             <div className="container">
-                { post}
+                { post }
             </div>
         )
     }
